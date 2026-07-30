@@ -202,16 +202,7 @@ export default function Chapter1({ onFinish }: Chapter1Props) {
       <h1 className="text-center text-4xl font-bold text-pink-300">
   Chapter 1 ❤️
 </h1>
-<motion.div
-  key={`${page}-${revealed}`}
-  initial={{ opacity: 0, scale: 1.15 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8 }}
->
-  <div className="grid grid-cols-3 gap-3">
-    ...
-  </div>
-</motion.div>
+
 <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
   {pages[page].map((photo, index) => (
     <PhotoCard
