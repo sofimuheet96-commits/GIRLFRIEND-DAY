@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #050505;
+    --foreground: #ffffff;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #000000;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   Luxury Intro Background
+=========================== */
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+
+.stars {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.95) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,215,0,.9) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,.4) 2px, transparent 2px);
+
+  background-size:
+    70px 70px,
+    140px 140px,
+    220px 220px;
+
+  animation: twinkle 5s ease-in-out infinite;
+}
+
+/* ===========================
+   Luxury Glow
+=========================== */
+
+@keyframes glow {
+
+  0%,
+  100% {
+    opacity: .35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .8;
+    transform: scale(1.15);
+  }
+}
+
+.gold-glow {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,215,0,.25),
+    transparent 70%
+  );
+
+  filter: blur(90px);
+
+  animation: glow 6s ease-in-out infinite;
+}
+
+/* ===========================
+   Floating Animation
+=========================== */
+
+@keyframes floating {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* ===========================
+   Luxury Gold Text
+=========================== */
+
+.gold-text {
+  background: linear-gradient(
+    90deg,
+    #fff8dc,
+    #ffd700,
+    #fff6b5,
+    #d4af37
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 20px rgba(255,215,0,.6),
+    0 0 40px rgba(255,215,0,.3),
+    0 0 70px rgba(255,215,0,.15);
+}
+
+/* ===========================
+   Floating Golden Particles
+=========================== */
+
+@keyframes drift {
+
+  0% {
+    transform: translateY(0px) translateX(0px) scale(.8);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .8;
+  }
+
+  80% {
+    opacity: .8;
+  }
+
+  100% {
+    transform: translateY(-160px) translateX(35px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: #ffd700;
+  filter: blur(1px);
+  box-shadow: 0 0 12px #ffd700;
+  animation: drift linear infinite;
+}

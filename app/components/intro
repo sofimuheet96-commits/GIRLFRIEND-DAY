@@ -1,0 +1,19 @@
+"use client";
+
+import { Canvas } from "@react-three/fiber";
+import Scene from "./Scene";
+
+export default function Intro() {
+  return (
+    <div className="fixed inset-0 z-50 bg-black">
+      <Canvas
+        camera={{
+          position: [0, 0, 8],
+          fov: 45,
+        }}
+      >
+        <Scene />
+      </Canvas>
+    </div>
+  );
+}
