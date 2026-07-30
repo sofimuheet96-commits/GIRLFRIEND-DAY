@@ -88,26 +88,47 @@ export default function PhotoJourney({ onFinish }: PhotoJourneyProps) {
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="flex min-h-screen items-center justify-center px-6"
+    className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black"
   >
-    <div className="text-center">
-      <h1 className="text-5xl font-bold text-pink-300">
+    {/* Storm Video */}
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="absolute inset-0 h-full w-full object-cover"
+    >
+      <source src="/videos/storm.mp4" type="video/mp4" />
+    </video>
+
+    {/* Dark Overlay */}
+    <div className="absolute inset-0 bg-black/60" />
+
+    {/* Text */}
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="relative z-10 text-center px-6"
+    >
+      <h1 className="text-5xl md:text-7xl font-bold text-pink-300">
         Every Memory With You ❤️
       </h1>
 
-      <p className="mt-6 text-white/80">
+      <p className="mt-6 text-lg md:text-2xl text-white/90">
         Every picture reminds me how lucky I am to have you.
       </p>
 
       <button
         onClick={() => setStage("envelope")}
-        className="mt-10 rounded-full bg-pink-500 px-8 py-3 text-white"
+        className="mt-10 rounded-full bg-pink-500 px-10 py-4 text-white text-lg hover:bg-pink-400 transition"
       >
         Continue ❤️
       </button>
-    </div>
+    </motion.div>
   </motion.section>
-)}     
+)}
+    
  {stage === "envelope" && (
   <motion.section
     key="envelope"
