@@ -1171,11 +1171,11 @@ Forever Yours,
       </div>
 
       <button
-       onClick={onFinish}
-        className="mt-10 w-full rounded-full bg-pink-500 py-3 text-white"
-      >
-        Continue Our Story ❤️
-      </button>
+  onClick={() => setStage("chapter2")}
+  className="mt-10 w-full rounded-full bg-pink-500 py-3 text-white"
+>
+  Continue Our Story ❤️
+</button>
     </motion.div>
   </motion.section>
 )}

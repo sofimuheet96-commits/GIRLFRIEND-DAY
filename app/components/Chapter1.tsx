@@ -208,7 +208,7 @@ export default function Chapter1({ onFinish }: Chapter1Props) {
   animate={{ opacity: 1, scale: 1 }}
   transition={{ duration: 0.8 }}
 >
-  <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div className="grid grid-cols-3 gap-3">
     ...
   </div>
 </motion.div>
