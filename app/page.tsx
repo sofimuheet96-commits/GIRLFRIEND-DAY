@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import PasswordScreen from "./components/PasswordScreen";
 import JourneyIntro from "./components/JourneyIntro";
-import PhotoJourney from "./components/PhotoJourney";
+import Chapter1 from "./components/Chapter1";
 import BookIntro from "./components/Bookintro";
 import LoveChoice from "./components/LoveChoice";
 import FunnyNo from "./components/FunnyNo";
@@ -37,8 +37,8 @@ export default function Home() {
   }
 
   if (step === 1) {
-    return <PhotoJourney onFinish={() => setStep(2)} />;
-  }
+  return <Chapter1 onFinish={() => setStep(2)} />;
+}
 
   if (step === 2) {
     return <BookIntro onFinish={() => setStep(3)} />;

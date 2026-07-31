@@ -11,7 +11,7 @@ export default function LoveLetter({ onOpen }: Props) {
   const [opened, setOpened] = useState(false);
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center px-6">
+    <section className="fixed inset-0 z-[60] bg-black flex items-center justify-center px-6">
 
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
